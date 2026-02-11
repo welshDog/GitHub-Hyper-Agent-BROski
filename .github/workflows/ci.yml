@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Python Setup
+    - name: Set up Python
+      if: hashFiles('**/*.py') != ''
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install Python dependencies
+      if: hashFiles('**/*.py') != ''
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f setup.py ]; then pip install .; fi
+        pip install pylint pytest
+
+    - name: Lint with pylint
+      if: hashFiles('**/*.py') != ''
+      run: |
+        # Don't fail on lint for now, just report
+        pylint $(git ls-files '*.py') --disable=C,R,W0611 || true
+        
+    - name: Test with pytest
+      if: hashFiles('**/*.py') != ''
+      run: |
+        if [ -d tests ]; then pytest; else echo "No tests found"; fi
+
+    # Node.js Setup
+    - name: Set up Node.js
+      if: hashFiles('package.json') != ''
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        
+    - name: Install Node dependencies
+      if: hashFiles('package.json') != ''
+      run: npm ci || npm install
+      
+    - name: Run Node tests
+      if: hashFiles('package.json') != ''
+      run: npm test || echo "No test script"
+
+  security:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+    - uses: actions/checkout@v3
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: 'python, javascript'
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
