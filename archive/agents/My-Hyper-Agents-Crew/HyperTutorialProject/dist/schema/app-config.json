@@ -1,0 +1,412 @@
+{
+  "$ref": "#/definitions/AppConfig",
+  "definitions": {
+    "AppConfig": {
+      "type": "object",
+      "properties": {
+        "env": {
+          "type": "string",
+          "enum": [
+            "development",
+            "staging",
+            "production",
+            "test"
+          ]
+        },
+        "port": {
+          "type": "number"
+        },
+        "serviceName": {
+          "type": "string"
+        },
+        "logging": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": [
+                "debug",
+                "info",
+                "warn",
+                "error"
+              ]
+            },
+            "format": {
+              "type": "string"
+            },
+            "redactKeys": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "level",
+            "format",
+            "redactKeys"
+          ],
+          "additionalProperties": false
+        },
+        "database": {
+          "type": "object",
+          "properties": {
+            "host": {
+              "type": "string"
+            },
+            "port": {
+              "type": "number"
+            },
+            "username": {
+              "type": "string",
+              "minLength": 1
+            },
+            "password": {
+              "type": "string",
+              "minLength": 1
+            },
+            "name": {
+              "type": "string"
+            },
+            "pool": {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "min",
+                "max"
+              ],
+              "additionalProperties": false
+            },
+            "ssl": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "host",
+            "port",
+            "username",
+            "password",
+            "name",
+            "pool",
+            "ssl"
+          ],
+          "additionalProperties": false
+        },
+        "api": {
+          "type": "object",
+          "properties": {
+            "baseUrl": {
+              "type": "string",
+              "format": "uri"
+            },
+            "timeoutMs": {
+              "type": "number"
+            },
+            "retryAttempts": {
+              "type": "number"
+            },
+            "services": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "apiKey": {
+                    "type": "string"
+                  },
+                  "publicKey": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "baseUrl",
+            "timeoutMs",
+            "retryAttempts",
+            "services"
+          ],
+          "additionalProperties": false
+        },
+        "studio": {
+          "type": "object",
+          "properties": {
+            "hardware": {
+              "type": "object",
+              "properties": {
+                "microphone": {
+                  "type": "object",
+                  "properties": {
+                    "recommended": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "filters": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "interface": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "recommended",
+                    "filters",
+                    "interface"
+                  ],
+                  "additionalProperties": false
+                },
+                "camera": {
+                  "type": "object",
+                  "properties": {
+                    "resolution": {
+                      "type": "string"
+                    },
+                    "framing": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resolution",
+                    "framing"
+                  ],
+                  "additionalProperties": false
+                },
+                "screen": {
+                  "type": "object",
+                  "properties": {
+                    "resolution": {
+                      "type": "string"
+                    },
+                    "aspectRatio": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resolution",
+                    "aspectRatio"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "microphone",
+                "camera",
+                "screen"
+              ],
+              "additionalProperties": false
+            },
+            "software": {
+              "type": "object",
+              "properties": {
+                "ide": {
+                  "type": "string"
+                },
+                "theme": {
+                  "type": "string"
+                },
+                "font": {
+                  "type": "object",
+                  "properties": {
+                    "family": {
+                      "type": "string"
+                    },
+                    "ligatures": {
+                      "type": "boolean"
+                    },
+                    "size": {
+                      "type": "object",
+                      "properties": {
+                        "editor": {
+                          "type": "number",
+                          "minimum": 16,
+                          "maximum": 24
+                        },
+                        "terminal": {
+                          "type": "number",
+                          "minimum": 16,
+                          "maximum": 24
+                        }
+                      },
+                      "required": [
+                        "editor",
+                        "terminal"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "family",
+                    "ligatures",
+                    "size"
+                  ],
+                  "additionalProperties": false
+                },
+                "ui": {
+                  "type": "object",
+                  "properties": {
+                    "hideActivityBar": {
+                      "type": "boolean"
+                    },
+                    "hideMinimap": {
+                      "type": "boolean"
+                    },
+                    "cursorBlinking": {
+                      "type": "string"
+                    },
+                    "screencastMode": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "hideActivityBar",
+                    "hideMinimap",
+                    "cursorBlinking",
+                    "screencastMode"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "ide",
+                "theme",
+                "font",
+                "ui"
+              ],
+              "additionalProperties": false
+            },
+            "recording": {
+              "type": "object",
+              "properties": {
+                "obs": {
+                  "type": "object",
+                  "properties": {
+                    "canvas": {
+                      "type": "string"
+                    },
+                    "fps": {
+                      "type": "number"
+                    },
+                    "bitrateKbps": {
+                      "type": "number"
+                    },
+                    "audioFilters": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "canvas",
+                    "fps",
+                    "bitrateKbps",
+                    "audioFilters"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "obs"
+              ],
+              "additionalProperties": false
+            },
+            "project": {
+              "type": "object",
+              "properties": {
+                "branching": {
+                  "type": "object",
+                  "properties": {
+                    "main": {
+                      "type": "string"
+                    },
+                    "starter": {
+                      "type": "string"
+                    },
+                    "checkpoints": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "main",
+                    "starter",
+                    "checkpoints"
+                  ],
+                  "additionalProperties": false
+                },
+                "hygiene": {
+                  "type": "object",
+                  "properties": {
+                    "linter": {
+                      "type": "string"
+                    },
+                    "formatter": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "linter",
+                    "formatter"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "branching",
+                "hygiene"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "hardware",
+            "software",
+            "recording",
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "env",
+        "port",
+        "serviceName",
+        "logging",
+        "database",
+        "api",
+        "studio"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

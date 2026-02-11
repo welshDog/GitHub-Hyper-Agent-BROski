@@ -1,0 +1,343 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Canvas > renders with empty graph 1`] = `
+<div>
+  <div
+    class="h-screen w-screen"
+  >
+    <div
+      class="flex h-full"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="react-flow"
+          data-testid="rf__wrapper"
+          style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+        >
+          <div
+            class="react-flow__renderer"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+          >
+            <div
+              class="react-flow__pane"
+              style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+            >
+              <div
+                class="react-flow__viewport react-flow__container"
+                style="transform: translate(0px,0px) scale(1);"
+              >
+                <svg
+                  class="react-flow__edges react-flow__container"
+                  height="500"
+                  style="z-index: 0;"
+                  width="500"
+                >
+                  <defs />
+                  <g />
+                </svg>
+                <div
+                  class="react-flow__edgelabel-renderer"
+                />
+                <div
+                  class="react-flow__nodes"
+                  style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                />
+              </div>
+            </div>
+          </div>
+          <svg
+            class="react-flow__background"
+            data-testid="rf__background"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+          >
+            <pattern
+              height="20"
+              id="pattern-1undefined"
+              patternTransform="translate(-0.5,-0.5)"
+              patternUnits="userSpaceOnUse"
+              width="20"
+              x="0"
+              y="0"
+            >
+              <circle
+                cx="0.5"
+                cy="0.5"
+                fill="#91919a"
+                r="0.5"
+              />
+            </pattern>
+            <rect
+              fill="url(#pattern-1undefined)"
+              height="100%"
+              width="100%"
+              x="0"
+              y="0"
+            />
+          </svg>
+          <div
+            class="react-flow__panel react-flow__minimap bottom right"
+            data-testid="rf__minimap"
+            style="pointer-events: all;"
+          >
+            <svg
+              aria-labelledby="react-flow__minimap-desc-1"
+              height="150"
+              role="img"
+              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+              viewBox="-100.00000000000004 -16.666666666666668 700.0000000000001 533.3333333333334"
+              width="200"
+            >
+              <title
+                id="react-flow__minimap-desc-1"
+              >
+                React Flow mini map
+              </title>
+              <path
+                class="react-flow__minimap-mask"
+                d="M-116.66666666666671,-33.333333333333336h733.3333333333335v566.6666666666667h-733.3333333333335z
+        M0,0h500v500h-500z"
+                fill="rgb(240, 240, 240, 0.6)"
+                fill-rule="evenodd"
+                pointer-events="none"
+                stroke="none"
+                stroke-width="1"
+              />
+            </svg>
+          </div>
+          <div
+            class="react-flow__panel react-flow__controls bottom left"
+            data-testid="rf__controls"
+            style="pointer-events: all;"
+          >
+            <button
+              aria-label="zoom in"
+              class="react-flow__controls-button react-flow__controls-zoomin"
+              title="zoom in"
+              type="button"
+            >
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="zoom out"
+              class="react-flow__controls-button react-flow__controls-zoomout"
+              title="zoom out"
+              type="button"
+            >
+              <svg
+                viewBox="0 0 32 5"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h32v4.2H0z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="fit view"
+              class="react-flow__controls-button react-flow__controls-fitview"
+              title="fit view"
+              type="button"
+            >
+              <svg
+                viewBox="0 0 32 30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="toggle interactivity"
+              class="react-flow__controls-button react-flow__controls-interactive"
+              title="toggle interactivity"
+              type="button"
+            >
+              <svg
+                viewBox="0 0 25 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.333 10.667H19.81V7.619C19.81 3.429 16.38 0 12.19 0c-4.114 1.828-1.37 2.133.305 2.438 1.676.305 4.42 2.59 4.42 5.181v3.048H3.047A3.056 3.056 0 000 13.714v15.238A3.056 3.056 0 003.048 32h18.285a3.056 3.056 0 003.048-3.048V13.714a3.056 3.056 0 00-3.048-3.047zM12.19 24.533a3.056 3.056 0 01-3.047-3.047 3.056 3.056 0 013.047-3.048 3.056 3.056 0 013.048 3.048 3.056 3.056 0 01-3.048 3.047z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="react-flow__panel react-flow__attribution bottom right"
+            data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://reactflow.dev/pro"
+            style="pointer-events: all;"
+          >
+            <a
+              aria-label="React Flow attribution"
+              href="https://reactflow.dev"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              React Flow
+            </a>
+          </div>
+          <div
+            id="react-flow__node-desc-1"
+            style="display: none;"
+          >
+            Press enter or space to select a node.
+            You can then use the arrow keys to move the node around.
+             Press delete to remove it and escape to cancel.
+             
+          </div>
+          <div
+            id="react-flow__edge-desc-1"
+            style="display: none;"
+          >
+            Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+          </div>
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            id="react-flow__aria-live-1"
+            style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+          />
+        </div>
+      </div>
+      <div
+        class="w-80 border-l border-white/10 p-4"
+      >
+        <div
+          class="text-sm opacity-80"
+        >
+          Properties
+        </div>
+        <div
+          class="mt-4 text-sm opacity-60"
+        >
+          Select a node
+        </div>
+        <div
+          class="mt-6"
+        >
+          <div
+            class="text-sm opacity-80"
+          >
+            Grid
+          </div>
+          <select
+            aria-label="Grid Size"
+            class="bg-black/30 border border-white/10 rounded px-2 py-1 w-full"
+          >
+            <option
+              value="8"
+            >
+              8px
+            </option>
+            <option
+              value="16"
+            >
+              16px
+            </option>
+            <option
+              value="32"
+            >
+              32px
+            </option>
+          </select>
+        </div>
+        <div
+          class="mt-6"
+        >
+          <div
+            class="text-sm opacity-80"
+          >
+            Palette
+          </div>
+          <div
+            class="mt-2 grid grid-cols-2 gap-2"
+          >
+            <button
+              aria-label="Add CSV Input"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              CSV Input
+            </button>
+            <button
+              aria-label="Add Map"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Map
+            </button>
+            <button
+              aria-label="Add Console Sink"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Console Sink
+            </button>
+            <button
+              aria-label="Add Branch"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Branch
+            </button>
+            <button
+              aria-label="Add Merge"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Merge
+            </button>
+            <button
+              aria-label="Add Condition"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Condition
+            </button>
+            <button
+              aria-label="Add Composite"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded col-span-2"
+            >
+              Composite
+            </button>
+          </div>
+        </div>
+        <div
+          class="mt-6"
+        >
+          <div
+            class="text-sm opacity-80"
+          >
+            Data
+          </div>
+          <div
+            class="mt-2 flex gap-2"
+          >
+            <button
+              aria-label="Export JSON"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+            >
+              Export
+            </button>
+            <label
+              aria-label="Import JSON"
+              class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded cursor-pointer"
+            >
+              Import
+              <input
+                accept="application/json"
+                class="hidden"
+                type="file"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

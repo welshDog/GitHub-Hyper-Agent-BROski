@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CompositeEditor > renders default editor state 1`] = `
+<div>
+  <div
+    class="mt-4 space-y-2"
+  >
+    <div
+      class="text-sm opacity-80"
+    >
+      Composite Subgraph Editor
+    </div>
+    <div
+      class="text-xs opacity-60"
+    >
+      Status: 
+      Valid
+    </div>
+    <textarea
+      aria-label="Composite Subgraph JSON"
+      class="bg-black/30 border border-white/10 rounded px-2 py-1 w-full h-48 font-mono text-xs"
+    >
+      {
+  "id": "sub-graph",
+  "nodes": [],
+  "edges": []
+}
+    </textarea>
+    <button
+      aria-label="Apply Subgraph"
+      class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+    >
+      Apply
+    </button>
+  </div>
+</div>
+`;
+
+exports[`CompositeEditor > renders with provided value 1`] = `
+<div>
+  <div
+    class="mt-4 space-y-2"
+  >
+    <div
+      class="text-sm opacity-80"
+    >
+      Composite Subgraph Editor
+    </div>
+    <div
+      class="text-xs opacity-60"
+    >
+      Status: 
+      Valid
+    </div>
+    <textarea
+      aria-label="Composite Subgraph JSON"
+      class="bg-black/30 border border-white/10 rounded px-2 py-1 w-full h-48 font-mono text-xs"
+    >
+      {
+  "id": "g1",
+  "nodes": [],
+  "edges": []
+}
+    </textarea>
+    <button
+      aria-label="Apply Subgraph"
+      class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded"
+    >
+      Apply
+    </button>
+  </div>
+</div>
+`;

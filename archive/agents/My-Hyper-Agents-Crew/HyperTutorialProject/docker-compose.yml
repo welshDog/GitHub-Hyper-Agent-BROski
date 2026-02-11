@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hyper-cli:
+    build: .
+    volumes:
+      - ./config/settings.yaml:/app/config/settings.yaml
+    env_file:
+      - .env
+    # Interactive TTY for Inquirer prompts
+    stdin_open: true
+    tty: true
+    # Default to running the menu, but can be overridden
+    command: npm run power-moves
